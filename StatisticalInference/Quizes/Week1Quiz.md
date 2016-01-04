@@ -51,10 +51,10 @@ You are playing a game with a friend where you flip a coin and if it comes up he
 
 (Hints, look at Lecture 4 from 0 to 6:50 and Chapter 5 Problem 6. Also, for further reading on fair games and gambling, start with the Dutch Book problem ).
 
-- inline equation: $$p = \frac{X}/{Y}$$
-- inline equation: $$X = Y$$
-- inline equation: $$\frac{p}{1−p} = \frac{X}/{Y}$$
-- inline equation: $$\frac{p}/{1−p} = \frac{Y}/{X}$$
+- $p = {X}{Y}$
+- $X = Y$
+- ${p}{1−p} = {X}{Y}$
+- ${p}{1−p} = {Y}{X}$
 
 ### Answer
 - Answer goes here
