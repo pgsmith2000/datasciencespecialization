@@ -1,7 +1,7 @@
 ---
 title: "Week 1 Quiz"
 author: "Paul G. Smith"
-date: "January 4, 2016"
+date: "January 9, 2016"
 output: md_document
 ---
 
@@ -13,7 +13,7 @@ Week 1 Quiz
 
 |Attempts|Score|  
 |:------:|:---:|  
-|   0/3  | 0/10|  
+|   1/3  |10/10|  
 
 10 questions
 
@@ -28,7 +28,7 @@ Question 1
 - Make judicious use of color in your scatterplots
 
 ### Answer
-- Don't plot more than two variables at at time
+- Show causality, mechanism, explanation
 
 
 Question 2 
@@ -41,7 +41,7 @@ Question 2
 - Axes, legends, and other details are clean and exactly detailed.
 
 ### Answer
-- Answer goes here
+- The goal is for personal understanding
 
 Question 3
 ----------
@@ -53,7 +53,7 @@ Question 3
 - Plots are created and annotated with separate functions
 
 ### Answer
-- Answer goes here
+- Plots are created and annotated with separate functions
 
 Question 4
 ----------
@@ -65,7 +65,7 @@ Question 4
 - The keyboard
 
 ### Answer
-- Answer goes here
+- A PDF file
 
 Question 5
 ----------
@@ -78,7 +78,7 @@ Question 5
 - JPEG
 
 ### Answer
-- Answer goes here
+- Postscript
 
 Question 6
 ----------
@@ -90,7 +90,7 @@ Question 6
 - Plots that are not scaled to a specific resolution
 
 ### Answer
-- Answer goes here
+- Scatterplots with many many points
 
 Question 7
 ----------
@@ -102,7 +102,7 @@ Question 7
 - hist()
 
 ### Answer
-- Answer goes here
+- points()
 
 Question 8
 ----------
@@ -114,7 +114,7 @@ Question 8
 - windows()
 
 ### Answer
-- Answer goes here
+- windows()
 
 Question 9
 ----------
@@ -126,7 +126,7 @@ Question 9
 - the orientation of the axis labels on the plot
 
 ### Answer
-- Answer goes here
+- the plotting symbol/character in the base graphics system
 
 Question 10
 -----------
@@ -138,6 +138,6 @@ Question 10
 - Construct the plot on the PNG device with png(), then copy it to a PDF with dev.copy2pdf().
 
 ### Answer
-- Answer goes here
+- Construct the plot on the screen device and then copy it to a PDF file with dev.copy2pdf()
 
 

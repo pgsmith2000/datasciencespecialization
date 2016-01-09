@@ -28,8 +28,14 @@ Consider influenza epidemics for two parent heterosexual families. Suppose that 
 - 5%
 - 17%
 
+A = Mother, B = Father
+P(A∪B) = 17%, P(B) = 12%, P(A∩B) = 6%
+P(A∪B) = P(A)+P(B)−P(A∩B) 
+17% = P(A) = 12% - 6%
+P(A) = 17% - 12% + 6% = 11%
+
 ### Answer
-- Answer goes here
+- 11%
 
 Question 2 
 ----------
@@ -43,7 +49,7 @@ A random variable, X is uniform, a box from 0 to 1 of height 1. (So that its den
 - 0.10
 
 ### Answer
-- Answer goes here
+- .75
 
 Question 3 
 ----------
@@ -56,8 +62,14 @@ You are playing a game with a friend where you flip a coin and if it comes up he
 - ${p}{1−p} = {X}{Y}$
 - ${p}{1−p} = {Y}{X}$
 
+You lose X with probability p and your friend gains Y with a probability of (1-p). 
+
+Therefore, to be fair, Xp = Y(1-p)
+
+an p/(1-p) = Y/X
+
 ### Answer
-- Answer goes here
+- ${p}{1−p} = {Y}{X}$
 
 Question 4 
 ----------
@@ -70,8 +82,10 @@ A density that looks like a normal density (but may or may not be exactly normal
 - We can't conclude anything about the median.
 - The median must be 1.
 
+The median must be 0 since 50 percent of the mass is below 0 and 50% is above
+
 ### Answer
-- Answer goes here
+- The median must be 0
 
 Question 5 
 ----------
@@ -96,10 +110,12 @@ What is the mean? (Hint, watch Lecture 4 on expectations of PMFs.)
 - 3
 - 1
 
-### Answer
-- Answer goes here
+sum(x*p)
 
-Question 5 
+### Answer
+- 3
+
+Question 6 
 ----------
 A web site (http://www.medicine.ox.ac.uk/bandolier/band64/b64-7.html) for home pregnancy tests cites the following: “When the subjects using the test were women who collected and tested their own samples, the overall sensitivity was 75%. Specificity was also low, in the range 52% to 75%.” Assume the lower value for the specificity. Suppose a subject has a positive test and that 30% of women taking pregnancy tests are actually pregnant. What number is closest to the probability of pregnancy given the positive test?
 
@@ -110,5 +126,20 @@ A web site (http://www.medicine.ox.ac.uk/bandolier/band64/b64-7.html) for home p
 - 10%
 - 30%
 
+(Sens * P(D))/(sens * P(D) + (1 - spec) * (1 - P(D)))
+(.75*.30)/(.75*.30) + (.48 *.7)
+.225/(.225 + .336)=.4
+The probability of Preg given a + test is P(Preg|+).
+
+P(Preg|+) = [P(+|Preg)P(Preg)]/[P(+|Preg)P(Preg)+P(1 - P(-|Pregc)(1-P(Preg)))
+P(Preg|+) = [Sens*P(Preg)]/{[Sens*P(Preg)] + Spec*(1 - P(Preg))}
+
+Sensitivity = P(+|Preg) = .75, Specificity = P(-|Pregc) = .52
+P(Preg) = .30, 
+
+          = [(.75 * .30)/[(.75 * .30) + .52 * (1 - .30)] ≈ 0.40
+          = .225/(.225 + .52 - .364)
+          = .225/.381 = .59
+
 ### Answer
-- Answer goes here
+- 40%
