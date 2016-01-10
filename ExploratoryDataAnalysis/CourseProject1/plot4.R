@@ -112,7 +112,7 @@ with(df, {
         plot(datetime, 
              Global_reactive_power,
              type="l", 
-             xlab="")
+             xlab="datetime")
 })
 
 # close the PNG file
