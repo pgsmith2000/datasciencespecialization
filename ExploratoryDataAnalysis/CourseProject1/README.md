@@ -85,12 +85,13 @@ When you are finished with the assignment, push your git repository to GitHub so
 The four plots that you will need to construct are shown below.
 
 Plot 1
-
+![Plot 1](/plot1.png)
 
 Plot 2
-
+![Plot 2](/plot2.png)
 
 Plot 3
+![Plot 3](/plot3.png)
 
 
 Plot 4
