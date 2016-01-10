@@ -9,17 +9,23 @@
 ######################################################################
 ##  Preliminaries
 ######################################################################
-
+# Check for data directory and create it if necessary
 if(!file.exists("./data")){
         dir.create("./data")
 }
+
 fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 destFile = "./data/electric_power_consumption.zip"
-if(!file.exists(destfile)){
+
+# Check if data file exist and download if necessary
+if(!file.exists(destFile)){
         download.file(fileURL, destFile, extra='-L',mode='wb')
 }
+
+# unzip the data
 unzip(destFile, exdir = "./data")
 
+# function for estimating RAM
 howMuchRAM <-function(ncol, nrow, cushion=3){
         #40 bytes per col
         colBytes <- ncol*40
@@ -36,20 +42,45 @@ howMuchRAM <-function(ncol, nrow, cushion=3){
         result <- list(object.size = object.size, RAM = RAM, ncol=ncol, nrow=nrow, cushion=cushion)
 }
 
+# Check how much RAM may be needed
 howMuchRAM(9, 2075259) 
+
+# Check how much RAM is available
 memory.size()
 
+#save original graphics (par) settings
+orig_par <- par()
+
+######################################################################
+##  Read in Data
+######################################################################
+
+# read data into data.frame df
 dataFile <- "./data/household_power_consumption.txt"
 df <- read.table(dataFile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
 df <- df[df$Date %in% c("1/2/2007","2/2/2007") ,]
 
+# format date and datetime
 df$Date <- as.Date(df$Date, format="%d/%m/%Y")
 datetime <- paste(as.Date(df$Date), df$Time)
 df$datetime <- as.POSIXct(datetime)
 
-plot(df$Global_active_power~df$datetime, 
+# Open PNG device; create 'plot3.png' in the working directory
+output = "plot2.png"
+png(filename = output, height = 480, width = 480)
+
+# Plot 2
+
+plot(df$datetime, 
+     df$Global_active_power,
      type = "l", 
      ylab = "Global Active Power (kilowatts)",
      xlab = "")
-dev.copy(png, file="plot2.png", height=480, width=480)
+
+# close the PNG file
 dev.off()     
+
+# Reset graphic (par) settings to their original values
+suppressWarnings(par(orig_par))
+
+

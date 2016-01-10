@@ -1,4 +1,4 @@
-## plot1.R
+## plot4.R
 ##
 ## Getting and Cleaning Data
 ## Course Project
@@ -67,18 +67,58 @@ datetime <- paste(as.Date(df$Date), df$Time)
 df$datetime <- as.POSIXct(datetime)
 
 # Open PNG device; create 'plot3.png' in the working directory
-output = "plot1.png"
+output = "plot4.png"
 png(filename = output, height = 480, width = 480)
 
-# Plot 1
-globalActivePower <- as.numeric(df$Global_active_power)
-hist(globalActivePower, 
-     col="red", 
-     main="Global Active Power", 
-     xlab="Global Active Power (kilowatts)")
+######################################################################
+##  Create the Plot
+######################################################################
+
+## Plot 4
+par(mfrow = c(2,2), mar = c(4,4,2,1), oma = c(0,0,2,0))
+with(df, {
+        plot(df$datetime, 
+             df$Global_active_power,
+             type = "l", 
+             ylab = "Global Active Power",
+             xlab = "")
+        plot(datetime, 
+             Voltage,
+             type = "l", 
+             ylab = "Voltage", 
+             xlab="datetime")
+        plot(datetime, 
+             Sub_metering_1,
+             xlab = "", 
+             ylab = "Energy sub metering",
+             type = "n")
+        lines(datetime, 
+              Sub_metering_1,
+              col = "black")
+        lines(datetime, 
+              Sub_metering_2,
+              col = "red")
+        lines(datetime, 
+              Sub_metering_3,
+              col = "blue")
+        legend("topright", 
+               col = c("black", "red", "blue"), 
+               lty=1, 
+               lwd=2, 
+               bty="n",
+               legend = c("Sub_metering_1", 
+                          "Sub_metering_2", 
+                          "Sub_metering_3"))
+        plot(datetime, 
+             Global_reactive_power,
+             type="l", 
+             xlab="")
+})
 
 # close the PNG file
 dev.off()     
 
 # Reset graphic (par) settings to their original values
 suppressWarnings(par(orig_par))
+
+
